@@ -52,7 +52,7 @@
  		Cache["spu"] = serviceProviderUtility;
  	}
 
- 	bool signMetadata = Saml2Utils.GetBoolean(Request.Params["sign"]);
+ 	bool signMetadata = Saml2Utils.DefaultInstance().GetBoolean(Request.Params["sign"]);
 
  	Response.ContentType = "text/xml";
  	Response.Write(serviceProviderUtility.ServiceProvider.GetExportableMetadata(signMetadata));
